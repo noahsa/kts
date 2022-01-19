@@ -1,0 +1,16 @@
+name: kts
+namespace: kts
+runtime: python
+image: quay.io/nsayre/kts:latest
+imageDigest: sha256:b6b39c84ae0189509b43d506b7b534b22162c990b085d7364d8bd7511e80f698
+builder: default
+builders:
+  default: quay.io/boson/faas-python-builder
+buildpacks: []
+healthEndpoints: {}
+volumes: []
+buildEnvs: []
+envs: []
+annotations: {}
+options: {}
+labels: []
