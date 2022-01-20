@@ -1,8 +1,8 @@
-name: kts
+name: ets
 namespace: kts
 runtime: python
-image: quay.io/nsayre/kts:latest
-imageDigest: sha256:b6b39c84ae0189509b43d506b7b534b22162c990b085d7364d8bd7511e80f698
+image: quay.io/nsayre/kts-ets:latest
+imageDigest: sha256:0c46af786dc4d0e5d95484a64824a826741effe9cb16fc20d12eb53802d53c26
 builder: default
 builders:
   default: quay.io/boson/faas-python-builder

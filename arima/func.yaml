@@ -1,0 +1,16 @@
+name: arima
+namespace: kts
+runtime: python
+image: quay.io/nsayre/kts-arima:latest
+imageDigest: sha256:3598da95d9c574c190158632205708b7de3c00ee8db66f0795ef79f0039ae578
+builder: default
+builders:
+  default: quay.io/boson/faas-python-builder
+buildpacks: []
+healthEndpoints: {}
+volumes: []
+buildEnvs: []
+envs: []
+annotations: {}
+options: {}
+labels: []
