@@ -34,34 +34,21 @@ Scale time series forecasting with Kubernetes.
     oc new-project kts
     ```
 
-4. Optional. Pods on your cluster may have limit ranges enforced, which may cause requests to time out.
-
-    ```bash
-    oc delete limitranges kts-core-resource-limits
-    ```
-
-5. Build ETS container image and push to Quay
-
-    ```bash
-    ets$ kn func build
-    ets$ docker push quay.io/nsayre/kts-ets
-    ```
-
-6. Build ARIMA container image and push to Quay
+4. Build the ARIMA & ETS container image.
 
     ```bash
     arima$ kn func build
-    arima$ docker push quay.io/nsayre/kts-arima
+    ets$ kn func build
     ```
 
-7. Go to the quay.io web UI and make the images public.
-
-8. Deploy ARIMA and ETS service to OpenShift
+5. Deploy the ARIMA & ETS service to OpenShift. 
 
     ```bash
-    kn service create arima --port 8080 --limit memory- --limit cpy- --image quay.io/nsayre/kts-arima:latest
-    kn service create ets --port 8080 --limit memory- --limit cpy- --image quay.io/nsayre/kts-ets:latest
+    arima$ kn func deploy
+    ets$ kn func deploy
     ```
+
+    If this is the first time deploying, go to the quay.io web UI and make the images public. Then, re-run the above commands.
 
 ## Test
 
