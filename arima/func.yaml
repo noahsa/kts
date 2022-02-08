@@ -2,7 +2,7 @@ name: arima
 namespace: kts
 runtime: python
 image: quay.io/nsayre/kts-arima:latest
-imageDigest: sha256:3598da95d9c574c190158632205708b7de3c00ee8db66f0795ef79f0039ae578
+imageDigest: sha256:b1e2534fa20aab4b2325eece856ff6e6cba145de16304ef24cd6ffccde8b7eb7
 builder: default
 builders:
   default: quay.io/boson/faas-python-builder
@@ -12,5 +12,11 @@ volumes: []
 buildEnvs: []
 envs: []
 annotations: {}
-options: {}
+options:
+  scale:
+    min: 1
+    max: 20
+    metric: concurrency
+    target: 10
+    utilization: 10
 labels: []

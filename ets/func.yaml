@@ -12,5 +12,11 @@ volumes: []
 buildEnvs: []
 envs: []
 annotations: {}
-options: {}
+options:
+  scale:
+    min: 1
+    max: 20
+    metric: concurrency
+    target: 10
+    utilization: 10
 labels: []
